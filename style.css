@@ -1,0 +1,101 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #817373;
+}
+.smile-menu input[type=radio] {
+    display: none;
+}
+.smile-menu label {
+    display: block;
+    font-size:50px;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    top: 500px;
+}
+#btn-1:checked ~ .smile-controls label[for="btn-1"],
+#btn-2:checked ~ .smile-controls label[for="btn-2"],
+#btn-3:checked ~ .smile-controls label[for="btn-3"] { 
+    background-color: #ffd800;
+}
+/*улыбается*/
+.smile {
+    margin: auto;
+    margin-top: -100px;
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    background-color: #ffd800;
+}
+.smile-eye {
+    width: 80px;
+    height: 120px;
+    background: #808080;
+    border-radius: 50%;
+    margin-top: 50px;
+    display: inline-block;
+    
+}
+.smile-eye:before {
+    content: '';
+    display: block;
+    background: #000000;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border-radius: 50%;
+    margin-top: 10px;
+    transition: all 0.2s linear;
+}
+.l-eye {
+    margin-left: 100px;
+    margin-right: 30px;
+}
+.smile-mouth {
+    width: 220px;
+    margin: auto;
+    height:100px;
+    border-radius: 50%;
+    border: 25px solid #000000;
+    margin-top: -35px;
+     transition: all 0.2s linear;
+
+}
+.smile-mouth:before {
+    content:'';
+    display: block;
+    width: 270px;
+    height: 75px;
+    background: #ffd800;
+    margin-left: -25px;
+    margin-top: -25px;
+}
+/*злой*/
+#btn-2:checked ~ .smile .smile-eye:before {
+    margin-top: 30px;
+}
+#btn-2:checked ~ .smile .smile-mouth {
+    transform: rotate(180deg) translateY(-55px);
+
+}
+/*грустный*/
+#btn-3:checked ~ .smile .smile-eye:before {
+    margin-top: 60px;
+}
+#btn-3:checked ~ .smile .smile-mouth {
+    height: 25px;
+    border-radius: 0;
+    background: #000000;
+    border: none;
+    transform: translateY(80px);
+    width: 310px;
+}
+#btn-3:checked ~ .smile .smile-mouth:before {
+    display: none;
+    
+}
